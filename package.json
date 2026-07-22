@@ -1,0 +1,10 @@
+{
+  "name": "footgame-5v5",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jeu de football 2D 5 contre 5 jouable dans le navigateur",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check script.js && node --check server.js"
+  }
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07120f">
+  <title>FootGame — Match 5v5</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="FootGame, revenir au match">
+        <span class="brand-mark">FG</span>
+        <span>
+          <strong>FOOTGAME</strong>
+          <small>MATCH 5V5</small>
+        </span>
+      </a>
+
+      <div class="scoreboard" aria-live="polite">
+        <div class="team team-blue"><span class="team-dot"></span><span>AZUR</span></div>
+        <strong id="scoreBlue">0</strong>
+        <div class="clock-block">
+          <span id="matchClock">03:00</span>
+          <small id="matchState">SIMULATION IA</small>
+        </div>
+        <strong id="scoreRed">0</strong>
+        <div class="team team-red"><span>CARMIN</span><span class="team-dot"></span></div>
+      </div>
+
+      <div class="top-actions">
+        <button class="icon-button" id="soundButton" type="button" aria-label="Couper le son" title="Son">♪</button>
+        <button class="stats-button" id="statsButton" type="button" aria-label="Ouvrir les statistiques">STATS</button>
+        <button class="debug-button" id="debugButton" type="button" aria-pressed="true" aria-label="Masquer les valeurs de débogage">DEBUG</button>
+        <button class="speed-button" id="speedButton" type="button" aria-label="Vitesse de simulation">×1</button>
+        <button class="icon-button" id="pauseButton" type="button" aria-label="Mettre en pause" title="Pause">Ⅱ</button>
+      </div>
+    </header>
+
+    <section class="match-stage" aria-label="Terrain de football 5 contre 5">
+      <canvas id="gameCanvas" width="1280" height="720" aria-label="Match de football 2D interactif"></canvas>
+
+      <div class="event-banner" id="eventBanner" aria-live="assertive">
+        <strong id="eventTitle">COUP D'ENVOI</strong>
+        <span id="eventSubtitle">AZUR engage</span>
+      </div>
+
+      <div class="power-wrap" id="powerWrap" aria-hidden="true">
+        <span>TIR</span>
+        <div class="power-track"><i id="powerFill"></i></div>
+      </div>
+
+      <aside class="debug-feed" id="debugFeed" aria-live="polite" aria-label="Journal des tests statistiques">
+        <header><span></span>TESTS DE STATS</header>
+        <div class="debug-log" id="debugLog"><p>En attente d'une action…</p></div>
+      </aside>
+
+      <div class="pause-panel" id="pausePanel" hidden>
+        <div class="modal-card">
+          <span class="eyebrow">MATCH INTERROMPU</span>
+          <h1>Pause</h1>
+          <p>La simulation et le chrono sont arrêtés.</p>
+          <button class="primary-button" id="resumeButton" type="button">Reprendre la simulation</button>
+          <button class="secondary-button" id="restartButton" type="button">Nouveau match</button>
+        </div>
+      </div>
+
+      <div class="pause-panel" id="endPanel" hidden>
+        <div class="modal-card">
+          <span class="eyebrow">COUP DE SIFFLET FINAL</span>
+          <h1 id="endTitle">Match terminé</h1>
+          <p id="endScore">Azur 0 — 0 Carmin</p>
+          <button class="primary-button" id="playAgainButton" type="button">Simuler un nouveau match</button>
+        </div>
+      </div>
+
+      <div class="stats-overlay" id="statsPanel" hidden>
+        <section class="stats-drawer" aria-label="Statistiques détaillées du match">
+          <header class="stats-header">
+            <div><span class="eyebrow">ANALYSE EN DIRECT</span><h2>Feuille de match</h2></div>
+            <button class="icon-button" id="closeStatsButton" type="button" aria-label="Fermer les statistiques">×</button>
+          </header>
+
+          <div class="stats-summary">
+            <div><small>SCORE</small><strong id="panelScore">0 — 0</strong></div>
+            <div><small>POSSESSION</small><strong id="panelPossession">50 — 50</strong></div>
+            <div><small>TIRS</small><strong id="panelShots">0 — 0</strong></div>
+          </div>
+
+          <article class="player-detail" id="playerDetail"></article>
+
+          <div class="team-tables" id="teamTables"></div>
+          <p class="stats-hint">Sélectionnez un joueur pour afficher ses qualités et son influence sur le match.</p>
+        </section>
+      </div>
+    </section>
+
+    <footer class="control-dock">
+      <div class="live-status">
+        <span class="live-badge"><i></i>DIRECT</span>
+        <div><small>SIMULATION AUTONOME</small><strong id="liveAction">Les deux IA jouent seules</strong></div>
+      </div>
+      <div class="match-stats" aria-label="Statistiques du match">
+        <span><small>TIRS</small><strong id="shotsText">0 — 0</strong></span>
+        <span><small>PASSES</small><strong id="passesText">0 — 0</strong></span>
+      </div>
+      <div class="possession">
+        <small>POSSESSION</small>
+        <div><span id="possessionBlue" style="width:50%"></span></div>
+        <strong id="possessionText">50 — 50</strong>
+      </div>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

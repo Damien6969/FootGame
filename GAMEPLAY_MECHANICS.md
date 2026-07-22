@@ -26,6 +26,14 @@ Les équipes se décalent avec le ballon et se projettent fortement lorsqu’ell
 
 La décision et l’exécution sont distinctes. Tous les aléas utilisent une distribution gaussienne déterministe, avec une variance minimale : une excellente note améliore fortement la régularité sans garantir le résultat.
 
+## Conduite, dribble et couloirs
+
+Le porteur prend une décision persistante (`CONDUIRE`, `PROGRESSER`, `DRIBBLER`, `DEBORDER` ou `REPIQUER`) au lieu de réagir à chaque image. Il compare tir, passe, conduite et dribble à partir de l’espace devant lui, de la pression, de ses attributs et de la progression vers le but.
+
+L’évaluation teste l’avant, les diagonales, les côtés et un repli court. Pendant une conduite, le ballon reste devant le joueur et la distance parcourue est comptabilisée. Un dribble déclenche un duel technique/vitesse/vision contre défense/vitesse/vision : réussite nette, réussite partielle ou perte de balle. Une réussite déséquilibre brièvement le défenseur et bloque son tacle immédiat.
+
+Les actions d’aile émettent `WING_RUN_START` ; un mouvement diagonal vers le but émet `CUT_INSIDE`. Les statistiques suivent distance de conduite, conduites progressives, dribbles tentés/réussis/ratés, défenseurs éliminés, débordements, repiquages et pertes en conduite.
+
 ## Contrôle, passe, tir et tacle
 
 ### Contrôle

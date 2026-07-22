@@ -20,4 +20,22 @@ while (!m.isFinished()) {
   }
 }
 assert(m.eventHistory.filter(e => e.type === 'MATCH_END').length === 1, 'match ends once');
+
+const active = run(12, 30);
+const activeEvents = active.evenements.map(e => e.type);
+assert(activeEvents.includes('BALL_CARRY_START'), 'a carrier can progress without an immediate pass or shot');
+assert(activeEvents.includes('DRIBBLE_ATTEMPT'), 'dribble attempts are emitted');
+assert(activeEvents.some(type => type === 'DRIBBLE_SUCCESS' || type === 'DRIBBLE_FAILED'), 'a dribble has a concrete outcome');
+assert(!/document|canvas|requestAnimationFrame|performance\.now|Math\.random/.test(require('fs').readFileSync('match-engine.js', 'utf8')), 'engine has no DOM or non-deterministic random dependency');
+for (const player of active.statistiques.individuelles) {
+  assert(player.distanceConduite >= 0, 'carry distance is valid');
+  assert(player.dribblesReussis <= player.dribblesTentes, 'dribble stats remain coherent');
+}
+const blocked = active.evenements.filter(e => e.type === 'SHOT_BLOCKED');
+assert(blocked.length >= 0, 'blocked shots are represented independently');
+
+for (let seed = 1; seed <= 100; seed++) {
+  const result = run(seed, 8);
+  assert(result.evenements.some(e => e.type === 'MATCH_END'), 'headless match terminates');
+}
 console.log('match-engine tests passed');

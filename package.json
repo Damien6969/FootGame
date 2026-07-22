@@ -5,6 +5,7 @@
   "description": "Jeu de football 2D 5 contre 5 jouable dans le navigateur",
   "scripts": {
     "start": "node server.js",
-    "check": "node --check script.js && node --check server.js"
+    "check": "node --check match-engine.js && node --check script.js && node --check server.js",
+    "test": "node test-match-engine.js"
   }
 }

@@ -31,8 +31,7 @@ for (const player of active.statistiques.individuelles) {
   assert(player.distanceConduite >= 0, 'carry distance is valid');
   assert(player.dribblesReussis <= player.dribblesTentes, 'dribble stats remain coherent');
 }
-const blocked = active.evenements.filter(e => e.type === 'SHOT_BLOCKED');
-assert(blocked.length >= 0, 'blocked shots are represented independently');
+assert(active.evenements.every(e => e.type !== 'SHOT_BLOCKED' || e.team), 'blocked shots retain the defending team');
 
 for (let seed = 1; seed <= 100; seed++) {
   const result = run(seed, 8);
@@ -54,4 +53,14 @@ const tired = new MatchEngine({ seed: 8, teams: { blue: [{ enduranceStat: 0 }, {
 const hi = energetic.players.find(p => p.team === 'blue' && !p.keeper), lo = tired.players.find(p => p.team === 'blue' && !p.keeper);
 energetic.applyEnergyCost(hi, 'SPRINT', 1, 8); tired.applyEnergyCost(lo, 'SPRINT', 1, 8);
 assert(hi.energyCurrent > lo.energyCurrent && hi.energyCurrent < 1, 'endurance slows, but does not eliminate, fatigue');
+const costs = new MatchEngine({ seed: 19 });
+const attacker = costs.players.find(p => p.team === 'blue' && !p.keeper), defender = costs.players.find(p => p.team === 'red' && !p.keeper);
+const beforeDribble = attacker.energyCurrent; costs.emit('DRIBBLE_ATTEMPT', { team: attacker.team, player: attacker.name }); const afterDribble = attacker.energyCurrent;
+costs.emit('DRIBBLE_ATTEMPT', { team: attacker.team, player: attacker.name });
+assert(afterDribble < beforeDribble && attacker.matchStats.nombreEffortsIntenses === 2, 'each dribble attempt has one punctual energy cost');
+const beforeShot = attacker.energyCurrent; costs.emit('SHOT', { team: attacker.team, player: attacker.name }); assert(attacker.energyCurrent < beforeShot, 'a shot has a punctual energy cost');
+const beforeTackle = defender.energyCurrent; costs.emit('TACKLE_WON', { team: defender.team, player: defender.name }); assert(defender.energyCurrent < beforeTackle && costs.eventHistory.some(e => e.type === 'TACKLE_ATTEMPT'), 'a tackle has one punctual energy cost and attempt event');
+const roleVariant = new MatchEngine({ seed: 5, teams: { blue: [{}, { defense: 10, vitesse: 98, technique: 95, tir: 95 }, { defense: 98, enduranceStat: 98 }, { vision: 99, passe: 99 }, { technique: 99, passe: 99, vision: 99, vitesse: 20 }] } });
+assert.notDeepStrictEqual(roleVariant.players.filter(p => p.team === 'blue').map(p => p.role), rolesA.slice(0, 5), 'team attributes change role distribution');
+assert(roleVariant.players.some(p => ['AILIER_DEBORDEUR', 'MILIEU_RECUPERATEUR', 'ATTAQUANT_PIVOT'].includes(p.role)), 'winger, ball-winner, or pivot roles are assignable');
 console.log('match-engine tests passed');

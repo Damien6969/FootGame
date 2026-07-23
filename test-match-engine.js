@@ -38,4 +38,20 @@ for (let seed = 1; seed <= 100; seed++) {
   const result = run(seed, 8);
   assert(result.evenements.some(e => e.type === 'MATCH_END'), 'headless match terminates');
 }
+const energyEngine = new MatchEngine({ seed: 33, duration: 10 });
+const openingEnergy = energyEngine.players.map(p => p.energyCurrent);
+assert(openingEnergy.every(e => e === 1), 'energy starts at one');
+for (let i = 0; i < 180; i++) energyEngine.step();
+const beforeKickoff = energyEngine.players.map(p => p.energyCurrent);
+energyEngine.kickoff('red');
+assert.deepStrictEqual(energyEngine.players.map(p => p.energyCurrent), beforeKickoff, 'kickoff never resets energy');
+assert(energyEngine.players.filter(p => !p.keeper).every(p => p.role), 'each field player receives a stable role');
+const rolesA = new MatchEngine({ seed: 5 }).players.map(p => p.role);
+const rolesB = new MatchEngine({ seed: 5 }).players.map(p => p.role);
+assert.deepStrictEqual(rolesA, rolesB, 'role assignment is deterministic');
+const energetic = new MatchEngine({ seed: 8, teams: { blue: [{ enduranceStat: 100 }, { enduranceStat: 100 }, { enduranceStat: 100 }, { enduranceStat: 100 }, { enduranceStat: 100 }] } });
+const tired = new MatchEngine({ seed: 8, teams: { blue: [{ enduranceStat: 0 }, { enduranceStat: 0 }, { enduranceStat: 0 }, { enduranceStat: 0 }, { enduranceStat: 0 }] } });
+const hi = energetic.players.find(p => p.team === 'blue' && !p.keeper), lo = tired.players.find(p => p.team === 'blue' && !p.keeper);
+energetic.applyEnergyCost(hi, 'SPRINT', 1, 8); tired.applyEnergyCost(lo, 'SPRINT', 1, 8);
+assert(hi.energyCurrent > lo.energyCurrent && hi.energyCurrent < 1, 'endurance slows, but does not eliminate, fatigue');
 console.log('match-engine tests passed');

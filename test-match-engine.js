@@ -48,6 +48,14 @@ assert(energyEngine.players.filter(p => !p.keeper).every(p => p.role), 'each fie
 const rolesA = new MatchEngine({ seed: 5 }).players.map(p => p.role);
 const rolesB = new MatchEngine({ seed: 5 }).players.map(p => p.role);
 assert.deepStrictEqual(rolesA, rolesB, 'role assignment is deterministic');
+const halves = new MatchEngine({ seed: 44, duration: 12 });
+while (!halves.halfTimeDone) halves.step();
+const scoreAtHalf = { ...halves.score }, rolesAtHalf = halves.players.map(p => p.role), energyAtHalf = halves.players.map(p => p.energyCurrent);
+assert(halves.eventHistory.some(e => e.type === 'HALF_TIME'), 'match emits a deterministic half-time event');
+for (let i = 0; i < 240; i++) halves.step();
+assert.deepStrictEqual(halves.score, scoreAtHalf, 'half-time itself does not reset score');
+assert.deepStrictEqual(halves.players.map(p => p.role), rolesAtHalf, 'half-time preserves roles');
+assert(halves.players.some((p,i) => p.energyCurrent >= energyAtHalf[i]) && halves.players.every(p => p.energyCurrent <= 1), 'half-time recovery occurs once and remains bounded');
 const energetic = new MatchEngine({ seed: 8, teams: { blue: [{ enduranceStat: 100 }, { enduranceStat: 100 }, { enduranceStat: 100 }, { enduranceStat: 100 }, { enduranceStat: 100 }] } });
 const tired = new MatchEngine({ seed: 8, teams: { blue: [{ enduranceStat: 0 }, { enduranceStat: 0 }, { enduranceStat: 0 }, { enduranceStat: 0 }, { enduranceStat: 0 }] } });
 const hi = energetic.players.find(p => p.team === 'blue' && !p.keeper), lo = tired.players.find(p => p.team === 'blue' && !p.keeper);

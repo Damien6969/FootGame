@@ -129,6 +129,8 @@ button { font: inherit; }
 .player-detail-head h3 { font: 800 22px Inter, sans-serif; letter-spacing: -.02em; }
 .player-detail-head p { color: var(--muted); font-size: 12px; }
 .player-match-line { margin: -3px 0 15px; color: #b6c6bf; font: 500 13px/1.55 Inter, sans-serif; letter-spacing: 0; }
+.role-pill { display: inline-block; margin-top: 4px; padding: 3px 8px; border: 1px solid rgba(117,198,255,.45); border-radius: 999px; color: #bfe3ff; font: 700 10px/1 Inter, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+.role-cell { color: #bfe3ff; font-size: 10px; font-weight: 700; white-space: nowrap; }
 .match-rating { margin-left: auto; text-align: right; }
 .match-rating small, .match-rating strong { display: block; }
 .match-rating small { color: var(--muted); font: 700 8px 'Barlow Condensed'; letter-spacing: .08em; }
@@ -146,6 +148,7 @@ button { font: inherit; }
 .player-table { width: 100%; border-collapse: collapse; font: 500 12px Inter, sans-serif; }
 .player-table th { padding: 9px 6px; color: var(--muted); font-size: 10px; text-align: right; border-bottom: 1px solid var(--line); }
 .player-table th:first-child { text-align: left; }
+.player-table th:nth-child(2), .player-table td:nth-child(2) { text-align: left; }
 .player-table td { padding: 10px 6px; text-align: right; border-bottom: 1px solid rgba(255,255,255,.08); }
 .player-table td:first-child { text-align: left; }
 .player-select { padding: 0; border: 0; background: transparent; color: var(--ink); cursor: pointer; font: 700 12px Inter, sans-serif; }

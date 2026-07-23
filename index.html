@@ -51,11 +51,6 @@
         <div class="power-track"><i id="powerFill"></i></div>
       </div>
 
-      <aside class="debug-feed" id="debugFeed" aria-live="polite" aria-label="Journal des tests statistiques">
-        <header><span></span>TESTS DE STATS</header>
-        <div class="debug-log" id="debugLog"><p>En attente d'une action…</p></div>
-      </aside>
-
       <div class="pause-panel" id="pausePanel" hidden>
         <div class="modal-card">
           <span class="eyebrow">MATCH INTERROMPU</span>
@@ -95,6 +90,11 @@
         </section>
       </div>
     </section>
+
+    <aside class="debug-feed" id="debugFeed" aria-live="polite" aria-label="Journal persistant du match">
+      <header><span></span><div><strong>JOURNAL DU MATCH</strong><small>Événements, décisions et duels en direct</small></div></header>
+      <div class="debug-log" id="debugLog"><p>En attente d'une action…</p></div>
+    </aside>
 
     <footer class="control-dock">
       <div class="live-status">

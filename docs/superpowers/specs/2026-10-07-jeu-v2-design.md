@@ -9,7 +9,9 @@ Source : brainstorming avec Damien, 7 octobre 2026. Les décisions prises ci-des
 
 ## Intention
 
-Conserver la coupe comme unique compétition jouée, tout en donnant aux clubs une position durable dans une pyramide géographique. Les championnats n'organisent pas de matchs supplémentaires : leur classement provient du parcours en coupe. Ils déterminent le tour d'entrée, les titres et les mouvements entre saisons.
+Conserver la coupe comme compétition centrale, tout en donnant aux clubs une position durable dans une pyramide géographique. Seul le championnat national joue ses propres matchs ; les championnats de conférence et régionaux sont classés d'après le parcours en coupe. Les divisions déterminent le tour d'entrée, les titres et les mouvements entre saisons.
+
+La V2 commence obligatoirement par une nouvelle partie. Aucune migration de carrière V1 vers les nouvelles règles n'est prévue. Préserver les anciennes sauvegardes ; ne pas les convertir silencieusement.
 
 ## Décisions prises
 
@@ -32,15 +34,25 @@ Au départ, un club par commune du référentiel. Population municipale de la co
 
 ### Classements et titres
 
-Appartenance fixée pour la saison, indépendante des changements à l'intersaison suivante. Ordre : tour atteint, différence de buts totale de la coupe, buts marqués, tirage au sort enregistré. Aucun critère de matchs joués, de victoires ou de population. Les buts encaissés sont redondants une fois différence et buts marqués fixés. Le calcul précis des buts et du rang du vainqueur doit être partagé avec les règles de score existantes.
+Appartenance fixée pour la saison, indépendante des changements à l'intersaison suivante. Pour conférence, régional, départemental et comparaison des candidats à la montée : tour atteint, différence de buts totale de la coupe, buts marqués, tirage au sort enregistré. Aucun critère de matchs joués, de victoires ou de population. Les buts encaissés sont redondants une fois différence et buts marqués fixés. Le calcul précis des buts et du rang du vainqueur doit être partagé avec les règles de score existantes. Le national utilise exclusivement les résultats de ses matchs de championnat pour son classement.
 
-Vainqueur de coupe : gagnant de la finale. Champion national : premier des quatre membres du championnat national. Champions de conférence et régionaux : premiers des quatre membres de leur championnat. Champion départemental : meilleur parcours parmi les clubs du département qui ne sont membres d'aucun championnat. Un territoire sans club éligible n'a pas de champion départemental. Un club régional vainqueur de coupe peut cumuler coupe et titre régional, sans recevoir le titre national.
+Vainqueur de coupe : gagnant de la finale. Champion national : premier du championnat national joué, indépendamment de la coupe. Champions de conférence et régionaux : premiers des quatre membres de leur championnat selon leur parcours en coupe. Champion départemental : meilleur parcours parmi les clubs du département qui ne sont membres d'aucun championnat. Un territoire sans club éligible n'a pas de champion départemental. Un club régional vainqueur de coupe peut cumuler coupe et titre régional, sans recevoir le titre national. Un club national peut réaliser le doublé championnat et coupe.
+
+### Championnat national joué
+
+Quatre clubs en aller-retour : six journées, douze matchs, six matchs par club. Barème retenu dans la proposition acceptée : victoire 3 points, nul 1, défaite 0. Les matchs peuvent finir nuls, contrairement à la coupe ; pas de prolongation ni de tirs au but de départage en championnat. Réutiliser les stades existants : chaque club reçoit dans son stade habituel, sans nouvelles enceintes dédiées.
+
+Les journées sont jouées en parallèle des phases départementale et régionale, avant les tours de conférence. Placement proposé : tours 1, 2, 4, 5, 6 et 8 ; l'accord porte sur le calendrier commun, la répartition exacte reste un réglage proposé. « Jouer le tour » simule la coupe et la journée nationale associée. Les résultats sont affichés séparément. Le championnat ne modifie jamais les qualifiés ni les buts utilisés dans le comparateur de parcours de coupe.
+
+Le quatrième descend, sauf s'il gagne la coupe : il est alors maintenu et le troisième descend. Toujours un relégué national, déterminé après la finale de coupe ; classement et titre de championnat peuvent être définitifs plus tôt. La protection ne s'applique qu'au vainqueur de coupe classé quatrième, sans modifier le classement final. En cas de fusion ultérieure, appliquer les règles de vacance séparément.
+
+Vue dédiée : calendrier aller-retour, résultats, classement par points, buteurs et statistiques des quatre clubs. Stocker l'identifiant de compétition dans les matchs, statistiques et archives. Les joueurs nationaux disputent entre sept et neuf matchs en tout. Distinctions propres au championnat et règles de récompenses globales à finaliser ; ne pas additionner silencieusement les buts de coupe et de championnat.
 
 ### Montées, descentes et fusions
 
 Parmi les premiers des championnats directement inférieurs rattachés au même championnat supérieur, le meilleur parcours monte selon le comparateur commun. Pas de saut de niveau, même en cas de victoire en coupe. Chaque championnat accueille au moins un promu du niveau inférieur. La taille reste fixe ; seul le nombre de descentes s'ajuste aux mouvements géographiques.
 
-Hors fusions et autres vacances : descentes vers le dessous = promus reçus du dessous + relégués reçus du dessus − promus partis au dessus. Les sorties sont prises en bas de classement. Le nombre peut être nul ou supérieur à un.
+Hors fusions et autres vacances : descentes vers le dessous = promus reçus du dessous + relégués reçus du dessus − promus partis au dessus. Les sorties de conférence et région sont prises en bas de classement selon la coupe. Leur nombre peut être nul ou supérieur à un. La descente nationale suit l'exception du vainqueur de coupe ci-dessus.
 
 Une entente conserve le niveau le plus élevé des clubs fusionnés. Sa ville de rattachement détermine son département, sa nouvelle région et sa conférence, y compris pour une fusion transfrontalière. Les places libérées sont comblées par les meilleurs clubs éligibles du niveau inférieur. Un nouveau club commence toujours au départemental.
 
@@ -63,7 +75,7 @@ Paris doit fonctionner avec zéro, un ou plusieurs clubs départementaux éligib
 
 Attractivité combinant force actuelle du club, division au moment du recrutement et parcours de la coupe précédente. La division donne un avantage durable ; une épopée peut le compenser partiellement. Affectations et mouvements sportifs réglés avant le mercato.
 
-Différencier résultat absolu (classements, titres, promotions) et performance relative (recrutement, départs, licenciements, évaluation des entraîneurs). La performance relative tient compte du tour d'entrée et de la force attendue ; une entrée en quarts ne constitue pas un beau parcours automatique. Une victoire en coupe reste une réussite majeure.
+Différencier résultat absolu de coupe (classements hors national, sélection des promus) et performance relative (recrutement, départs, licenciements, évaluation des entraîneurs). La performance relative tient compte du tour d'entrée et de la force attendue ; une entrée en quarts ne constitue pas un beau parcours automatique. Une victoire en coupe reste une réussite majeure. Évaluer aussi le championnat national joué, séparément du parcours en coupe ; son poids reste à décider.
 
 Réexaminer les transferts définitifs, prêts, nouveaux joueurs et nominations d'entraîneurs. Réviser les bonus actuels de champions en distinguant vainqueur de coupe et champion national. Les formules et probabilités ne sont pas encore décidées.
 
@@ -83,12 +95,13 @@ Chaque archive conserve règles de version, affectations de la saison, classemen
 
 ## Décisions ouvertes
 
-- [ ] Choisir la politique de sauvegardes V1 : lecture historique conservée et nouvelle partie V2, ou migration d'une carrière existante avec affectation initiale explicite.
+- [ ] Fixer les critères de départage du classement national à égalité de points (proposition : différence de buts du championnat, buts marqués, tirage enregistré).
+- [ ] Fixer les distinctions du championnat national et leur articulation avec les récompenses globales existantes, dont les distinctions par conférence et les espoirs. Décider si les catégories actuelles sont conservées avec un périmètre explicite ou complétées.
 - [ ] Définir précisément la sélection départemental → régional et le repêchage si le premier candidat est déjà promu ou a disparu dans une fusion.
 - [ ] Fixer la répartition entière des quotas régionaux et la solution si quatre tours départementaux sont insuffisants : tour préliminaire exceptionnel ou autre ajustement du calendrier.
 - [ ] Définir les situations extrêmes où l'obligation d'accueillir un promu et une arrivée géographique importante dépassent quatre places. Une descente de tous les membres ou un candidat déjà fusionné impose une règle cohérente ; aucun club ne doit occuper deux divisions ou disparaître silencieusement.
 - [ ] Fixer l'ordre exact des fusions, promotions ordinaires, reclassements territoriaux et repêchages, pour éviter de libérer deux fois la même place.
-- [ ] Définir les formules d'attractivité, les attentes selon le tour d'entrée et les licenciements ; traiter les très faibles nombres de matchs nationaux pour les joueurs et trophées.
+- [ ] Définir les formules d'attractivité, les attentes selon le tour d'entrée et les licenciements, avec le poids du championnat national et la fiabilité des notes sur peu de matchs.
 - [ ] Fixer le départage de communes de population identique à l'initialisation et les règles de cumul des bonus de titres.
 
 ## Vérifications à effectuer
@@ -96,6 +109,9 @@ Chaque archive conserve règles de version, affectations de la saison, classemen
 - Simuler l'initialisation réelle : 4 + 16 + 56 clubs distincts, toutes les communes affectées à une nouvelle région et une conférence.
 - Vérifier les quotas par département et région, les tableaux régionaux 16q et les douze qualifiés par conférence.
 - Vérifier les quinze tours, les trois entrées différées et les huit clubs nationaux ; examiner Paris sans participant local.
+- Vérifier les douze matchs nationaux, chaque paire dans les deux sens, deux matchs par journée et aucun club jouant deux fois à la même date. Tester les nuls sans vainqueur forcé.
+- Tester le calendrier commun, reprise à mi-journée sans double simulation, sauvegarde/rechargement et séparation de toutes les statistiques.
+- Tester les descentes nationales : quatrième ordinaire ; quatrième vainqueur de coupe et troisième relégué ; troisième vainqueur de coupe et quatrième relégué ; vainqueur hors championnat national.
 - Tester les fusions dans et entre niveaux/territoires, créations, trous, relégations concentrées et plusieurs saisons consécutives.
 - Vérifier conservation des clubs, unicité d'appartenance, taille de quatre, promotions minimales et déterminisme après rechargement/export/import.
 - Vérifier les historiques annuels après transferts, prêts et fusions ; couleur de la bonne saison dans toutes les vues.

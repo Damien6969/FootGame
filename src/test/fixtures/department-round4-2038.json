@@ -1,0 +1,608 @@
+[
+  {
+    "departmentId": "78",
+    "regionId": "11",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 27
+  },
+  {
+    "departmentId": "01",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 38
+  },
+  {
+    "departmentId": "02",
+    "regionId": "32",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 18
+  },
+  {
+    "departmentId": "03",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 14
+  },
+  {
+    "departmentId": "04",
+    "regionId": "93",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 8
+  },
+  {
+    "departmentId": "05",
+    "regionId": "93",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 4
+  },
+  {
+    "departmentId": "06",
+    "regionId": "93",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 16
+  },
+  {
+    "departmentId": "07",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 20
+  },
+  {
+    "departmentId": "08",
+    "regionId": "44",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 10
+  },
+  {
+    "departmentId": "09",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "10",
+    "regionId": "44",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 8
+  },
+  {
+    "departmentId": "11",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 9
+  },
+  {
+    "departmentId": "12",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 8
+  },
+  {
+    "departmentId": "13",
+    "regionId": "93",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 20
+  },
+  {
+    "departmentId": "14",
+    "regionId": "28",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 28
+  },
+  {
+    "departmentId": "15",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "16",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 9
+  },
+  {
+    "departmentId": "17",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 36
+  },
+  {
+    "departmentId": "18",
+    "regionId": "24",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 8
+  },
+  {
+    "departmentId": "19",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "21",
+    "regionId": "27",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 14
+  },
+  {
+    "departmentId": "22",
+    "regionId": "53",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 32
+  },
+  {
+    "departmentId": "23",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 3
+  },
+  {
+    "departmentId": "24",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 11
+  },
+  {
+    "departmentId": "25",
+    "regionId": "27",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 20
+  },
+  {
+    "departmentId": "26",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 22
+  },
+  {
+    "departmentId": "27",
+    "regionId": "28",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 26
+  },
+  {
+    "departmentId": "28",
+    "regionId": "24",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 18
+  },
+  {
+    "departmentId": "29",
+    "regionId": "53",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 36
+  },
+  {
+    "departmentId": "2A",
+    "regionId": "94",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 4
+  },
+  {
+    "departmentId": "2B",
+    "regionId": "94",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "30",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 34
+  },
+  {
+    "departmentId": "31",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 21
+  },
+  {
+    "departmentId": "32",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 4
+  },
+  {
+    "departmentId": "33",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 56
+  },
+  {
+    "departmentId": "34",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 20
+  },
+  {
+    "departmentId": "35",
+    "regionId": "53",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 42
+  },
+  {
+    "departmentId": "36",
+    "regionId": "24",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 8
+  },
+  {
+    "departmentId": "37",
+    "regionId": "24",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 22
+  },
+  {
+    "departmentId": "38",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 56
+  },
+  {
+    "departmentId": "39",
+    "regionId": "27",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 10
+  },
+  {
+    "departmentId": "40",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 24
+  },
+  {
+    "departmentId": "41",
+    "regionId": "24",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 16
+  },
+  {
+    "departmentId": "42",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 28
+  },
+  {
+    "departmentId": "43",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 12
+  },
+  {
+    "departmentId": "44",
+    "regionId": "52",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 36
+  },
+  {
+    "departmentId": "45",
+    "regionId": "24",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 26
+  },
+  {
+    "departmentId": "46",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "47",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 8
+  },
+  {
+    "departmentId": "48",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 2
+  },
+  {
+    "departmentId": "49",
+    "regionId": "52",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 22
+  },
+  {
+    "departmentId": "50",
+    "regionId": "28",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 20
+  },
+  {
+    "departmentId": "51",
+    "regionId": "44",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 12
+  },
+  {
+    "departmentId": "52",
+    "regionId": "44",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "53",
+    "regionId": "52",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 14
+  },
+  {
+    "departmentId": "54",
+    "regionId": "44",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 24
+  },
+  {
+    "departmentId": "55",
+    "regionId": "44",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "56",
+    "regionId": "53",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 34
+  },
+  {
+    "departmentId": "57",
+    "regionId": "44",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 38
+  },
+  {
+    "departmentId": "58",
+    "regionId": "27",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 8
+  },
+  {
+    "departmentId": "59",
+    "regionId": "32",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 70
+  },
+  {
+    "departmentId": "60",
+    "regionId": "32",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 32
+  },
+  {
+    "departmentId": "61",
+    "regionId": "28",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 12
+  },
+  {
+    "departmentId": "62",
+    "regionId": "32",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 50
+  },
+  {
+    "departmentId": "63",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 22
+  },
+  {
+    "departmentId": "64",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 26
+  },
+  {
+    "departmentId": "65",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 4
+  },
+  {
+    "departmentId": "66",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 20
+  },
+  {
+    "departmentId": "67",
+    "regionId": "44",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 36
+  },
+  {
+    "departmentId": "68",
+    "regionId": "44",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 30
+  },
+  {
+    "departmentId": "69",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 34
+  },
+  {
+    "departmentId": "70",
+    "regionId": "27",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 8
+  },
+  {
+    "departmentId": "71",
+    "regionId": "27",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 22
+  },
+  {
+    "departmentId": "72",
+    "regionId": "52",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 24
+  },
+  {
+    "departmentId": "73",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 16
+  },
+  {
+    "departmentId": "74",
+    "regionId": "84",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 36
+  },
+  {
+    "departmentId": "75",
+    "regionId": "11",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 3
+  },
+  {
+    "departmentId": "76",
+    "regionId": "28",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 36
+  },
+  {
+    "departmentId": "77",
+    "regionId": "11",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 44
+  },
+  {
+    "departmentId": "79",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 11
+  },
+  {
+    "departmentId": "80",
+    "regionId": "32",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 18
+  },
+  {
+    "departmentId": "81",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 18
+  },
+  {
+    "departmentId": "82",
+    "regionId": "76",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 14
+  },
+  {
+    "departmentId": "83",
+    "regionId": "93",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 24
+  },
+  {
+    "departmentId": "84",
+    "regionId": "93",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 16
+  },
+  {
+    "departmentId": "85",
+    "regionId": "52",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 36
+  },
+  {
+    "departmentId": "86",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 11
+  },
+  {
+    "departmentId": "87",
+    "regionId": "75",
+    "conferenceId": "CONF_SUD_OUEST",
+    "teamCount": 9
+  },
+  {
+    "departmentId": "88",
+    "regionId": "44",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 14
+  },
+  {
+    "departmentId": "89",
+    "regionId": "27",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 14
+  },
+  {
+    "departmentId": "90",
+    "regionId": "27",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "91",
+    "regionId": "11",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 26
+  },
+  {
+    "departmentId": "92",
+    "regionId": "11",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "93",
+    "regionId": "11",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "94",
+    "regionId": "11",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 8
+  },
+  {
+    "departmentId": "95",
+    "regionId": "11",
+    "conferenceId": "CONF_NORD",
+    "teamCount": 20
+  },
+  {
+    "departmentId": "971",
+    "regionId": "01",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "972",
+    "regionId": "02",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 6
+  },
+  {
+    "departmentId": "973",
+    "regionId": "03",
+    "conferenceId": "CONF_OUEST",
+    "teamCount": 4
+  },
+  {
+    "departmentId": "974",
+    "regionId": "04",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 4
+  },
+  {
+    "departmentId": "976",
+    "regionId": "06",
+    "conferenceId": "CONF_SUD_EST",
+    "teamCount": 4
+  }
+]

@@ -1,0 +1,67 @@
+const departments: Record<string, string> = {
+  '01':'Ain','02':'Aisne','03':'Allier','04':'Alpes-de-Haute-Provence','05':'Hautes-Alpes','06':'Alpes-Maritimes','07':'Ardèche','08':'Ardennes','09':'Ariège','10':'Aube','11':'Aude','12':'Aveyron','13':'Bouches-du-Rhône','14':'Calvados','15':'Cantal','16':'Charente','17':'Charente-Maritime','18':'Cher','19':'Corrèze','2A':'Corse-du-Sud','2B':'Haute-Corse','21':'Côte-d’Or','22':'Côtes-d’Armor','23':'Creuse','24':'Dordogne','25':'Doubs','26':'Drôme','27':'Eure','28':'Eure-et-Loir','29':'Finistère','30':'Gard','31':'Haute-Garonne','32':'Gers','33':'Gironde','34':'Hérault','35':'Ille-et-Vilaine','36':'Indre','37':'Indre-et-Loire','38':'Isère','39':'Jura','40':'Landes','41':'Loir-et-Cher','42':'Loire','43':'Haute-Loire','44':'Loire-Atlantique','45':'Loiret','46':'Lot','47':'Lot-et-Garonne','48':'Lozère','49':'Maine-et-Loire','50':'Manche','51':'Marne','52':'Haute-Marne','53':'Mayenne','54':'Meurthe-et-Moselle','55':'Meuse','56':'Morbihan','57':'Moselle','58':'Nièvre','59':'Nord','60':'Oise','61':'Orne','62':'Pas-de-Calais','63':'Puy-de-Dôme','64':'Pyrénées-Atlantiques','65':'Hautes-Pyrénées','66':'Pyrénées-Orientales','67':'Bas-Rhin','68':'Haut-Rhin','69':'Rhône','70':'Haute-Saône','71':'Saône-et-Loire','72':'Sarthe','73':'Savoie','74':'Haute-Savoie','75':'Paris','76':'Seine-Maritime','77':'Seine-et-Marne','78':'Yvelines','79':'Deux-Sèvres','80':'Somme','81':'Tarn','82':'Tarn-et-Garonne','83':'Var','84':'Vaucluse','85':'Vendée','86':'Vienne','87':'Haute-Vienne','88':'Vosges','89':'Yonne','90':'Territoire de Belfort','91':'Essonne','92':'Hauts-de-Seine','93':'Seine-Saint-Denis','94':'Val-de-Marne','95':'Val-d’Oise','971':'Guadeloupe','972':'Martinique','973':'Guyane','974':'La Réunion','976':'Mayotte'
+}
+
+const regions: Record<string, string> = {
+  '01':'Guadeloupe','02':'Martinique','03':'Guyane','04':'La Réunion','06':'Mayotte','11':'Île-de-France','24':'Centre-Val de Loire','27':'Bourgogne-Franche-Comté','28':'Normandie','32':'Hauts-de-France','44':'Grand Est','52':'Pays de la Loire','53':'Bretagne','75':'Nouvelle-Aquitaine','76':'Occitanie','84':'Auvergne-Rhône-Alpes','93':'Provence-Alpes-Côte d’Azur','94':'Corse'
+}
+
+const zones: Record<string, string> = { NORD_OUEST:'Nord-Ouest', NORD_EST:'Nord-Est', SUD_OUEST:'Sud-Ouest', SUD_EST:'Sud-Est', ILE_DE_FRANCE:'Île-de-France', OUTRE_MER:'Outre-mer' }
+
+const conferences: Record<string, string> = {
+  CONF_OUEST: 'Conférence Ouest (Atlantique)',
+  CONF_NORD: 'Conférence Nord (Septentrion)',
+  CONF_SUD_OUEST: 'Conférence Sud-Ouest',
+  CONF_SUD_EST: 'Conférence Sud-Est (Méditerranée & Alpes)',
+}
+
+const withCode = (name: string | undefined, code: string) => `${name ?? 'Territoire'} (${code})`
+export const departmentLabel = (code: string) => withCode(departments[code], code)
+export const regionLabel = (code: string) => withCode(regions[code], code)
+export const zoneLabel = (code: string) => withCode(zones[code], code)
+export const conferenceLabel = (code: string) => conferences[code] ?? code
+export const getConferenceShortName = (code?: string): string => {
+  if (!code) return ''
+  if (code === 'CONF_NORD' || code.includes('NORD')) return 'Nord'
+  if (code === 'CONF_SUD_OUEST' || code.includes('SUD_OUEST')) return 'Sud-Ouest'
+  if (code === 'CONF_SUD_EST' || code.includes('SUD_EST')) return 'Sud-Est'
+  if (code === 'CONF_OUEST' || code.includes('OUEST')) return 'Ouest'
+  return code
+}
+
+export const getDepartmentName = (code?: string): string | undefined => (code ? departments[code] : undefined)
+export const getDepartmentNamesList = (): readonly string[] => Object.values(departments)
+
+export const getRegionName = (code?: string): string | undefined => (code ? regions[code] : undefined)
+export const getRegionNamesList = (): readonly string[] => Object.values(regions)
+
+const departmentToRegion: Record<string, string> = {
+  '01': '84', '02': '32', '03': '84', '04': '93', '05': '93', '06': '93', '07': '84', '08': '44', '09': '76',
+  '10': '44', '11': '76', '12': '76', '13': '93', '14': '28', '15': '84', '16': '75', '17': '75', '18': '24', '19': '75',
+  '2A': '94', '2B': '94', '21': '27', '22': '53', '23': '75', '24': '75', '25': '27', '26': '84', '27': '28', '28': '24', '29': '53',
+  '30': '76', '31': '76', '32': '76', '33': '75', '34': '76', '35': '53', '36': '24', '37': '24', '38': '84', '39': '27',
+  '40': '75', '41': '24', '42': '84', '43': '84', '44': '52', '45': '24', '46': '76', '47': '75', '48': '76', '49': '52',
+  '50': '28', '51': '44', '52': '44', '53': '52', '54': '44', '55': '44', '56': '53', '57': '44', '58': '27', '59': '32',
+  '60': '32', '61': '28', '62': '32', '63': '84', '64': '75', '65': '76', '66': '76', '67': '44', '68': '44', '69': '84',
+  '70': '27', '71': '27', '72': '52', '73': '84', '74': '84', '75': '11', '76': '28', '77': '11', '78': '11', '79': '75',
+  '80': '32', '81': '76', '82': '76', '83': '93', '84': '93', '85': '52', '86': '75', '87': '75', '88': '44', '89': '27',
+  '90': '27', '91': '11', '92': '11', '93': '11', '94': '11', '95': '11',
+  '971': '01', '972': '02', '973': '03', '974': '04', '976': '06'
+}
+
+export const getRegionIdForDepartment = (deptId?: string): string | undefined => (deptId ? departmentToRegion[deptId] : undefined)
+export const getRegionNameForDepartment = (deptId?: string): string | undefined => {
+  const regId = getRegionIdForDepartment(deptId)
+  return regId ? regions[regId] : undefined
+}
+
+export const getAllConferences = (): ReadonlyArray<{ id: string; label: string }> =>
+  Object.entries(conferences).map(([id, label]) => ({ id, label }))
+
+export const getAllRegions = (): ReadonlyArray<{ id: string; name: string }> =>
+  Object.entries(regions).map(([id, name]) => ({ id, name }))
+
+export const getAllDepartments = (): ReadonlyArray<{ id: string; name: string; regionId: string }> =>
+  Object.entries(departments).map(([id, name]) => ({ id, name, regionId: departmentToRegion[id] }))
+
+

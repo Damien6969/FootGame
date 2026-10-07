@@ -1,0 +1,94 @@
+.club-badge {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 29px;
+  overflow: hidden;
+  border-radius: 7px 7px 11px 11px;
+  background: var(--club-primary);
+  border: 1px solid var(--club-secondary);
+  border-bottom: 3px solid var(--club-secondary);
+  color: var(--club-on-primary);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  vertical-align: middle;
+}
+.club-badge:has(img) { background: var(--color-surface-muted); padding: 2px; }
+.club-badge img { width: 100%; height: 100%; object-fit: contain; }
+.club-badge--lg { width: 68px; height: 74px; font-size: 22px; border-radius: 12px 12px 22px 22px; }
+.team-link:has(.club-badge) { display: inline-flex; align-items: center; gap: 7px; min-width: 0; max-width: 100%; }
+.team-link:has(.club-badge) > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.teams-directory .matches-filter-chips { max-width: 100%; flex-wrap: wrap; }
+.club-identity-hero {
+  background: var(--club-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--club-primary);
+  border-bottom: 4px solid var(--club-secondary);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+}
+.club-identity-hero .team-link { color: var(--club-accent); }
+.club-profile-hero { display: flex; align-items: center; gap: 18px; padding: 20px; margin: var(--space-3) 0; }
+.club-profile-heading { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; flex: 1; }
+.club-profile-heading h2 { overflow-wrap: anywhere; }
+.club-profile-heading .badge { max-width: 100%; white-space: normal; flex-wrap: wrap; }
+.club-color-signature { display: flex; flex-wrap: wrap; gap: 6px; }
+.club-color-chip { padding: 4px 9px; border-radius: 5px; font-size: .7rem; font-weight: 700; letter-spacing: .04em; }
+.club-color-chip--primary { background: var(--club-primary); color: var(--club-on-primary); }
+.club-color-chip--secondary { background: var(--club-secondary); color: var(--club-on-secondary); }
+.club-identity-control { margin-bottom: var(--space-4); }
+.club-identity-control button {
+  background: var(--color-surface-muted); color: var(--color-text);
+  border: 1px solid var(--color-border-hover); border-radius: var(--radius-sm);
+  padding: 8px 12px; font: inherit; font-size: .85rem; cursor: pointer;
+}
+.club-identity-control button:hover { background: var(--color-surface-hover); }
+.club-identity-control button:focus-visible, .club-identity-control input:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.club-identity-control button:disabled { opacity: .55; cursor: default; }
+.club-identity-success { color: var(--color-accent-light); margin-left: 12px; font-size: .85rem; }
+.club-identity-editor {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  padding: 20px; margin-top: 12px;
+  background: var(--color-surface); border: 1px solid var(--color-border-hover); border-radius: var(--radius-lg);
+}
+.club-identity-editor-heading, .club-identity-preview, .club-identity-actions, .club-identity-error { grid-column: 1 / -1; }
+.club-identity-editor-heading h3 { margin: 0 0 4px; }
+.club-identity-editor-heading p { margin: 0; color: var(--color-text-muted); font-size: .85rem; }
+.club-identity-editor fieldset { min-width: 0; margin: 0; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 14px; }
+.club-identity-editor legend { font-weight: 700; padding: 0 6px; }
+.club-logo-upload { display: flex; flex-direction: column; gap: 8px; font-size: .85rem; font-weight: 600; }
+.club-logo-upload input { width: 100%; min-width: 0; font: inherit; font-size: .8rem; }
+.club-logo-upload input::file-selector-button { background: var(--color-surface-elevated); color: var(--color-text); border: 1px solid var(--color-border-hover); border-radius: 5px; padding: 8px; margin-right: 8px; cursor: pointer; }
+.club-identity-help { color: var(--color-text-muted); font-size: .78rem; line-height: 1.5; }
+.club-crest-options, .club-palette-options, .club-identity-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.club-crest-options { margin: 12px 0 6px; }
+.club-crest-options button { display: inline-flex; align-items: center; gap: 6px; }
+.club-crest-options img { width: 24px; height: 28px; object-fit: contain; }
+.club-crest-options button[aria-pressed="true"] { border-color: var(--color-focus); box-shadow: 0 0 0 1px var(--color-focus); }
+.club-color-fields { display: flex; flex-wrap: wrap; gap: 12px; }
+.club-color-field { flex: 1; min-width: 150px; }
+.club-color-field label { display: block; font-size: .8rem; margin-bottom: 6px; color: var(--color-text-muted); }
+.club-color-field > div { display: flex; align-items: center; gap: 8px; }
+.club-color-field input[type="color"] { width: 40px; height: 36px; padding: 2px; background: var(--color-surface-muted); border: 1px solid var(--color-border-hover); border-radius: 5px; cursor: pointer; }
+.club-color-field input[type="text"] { min-width: 0; width: 100px; height: 36px; padding: 6px 8px; font: inherit; font-size: .85rem; background: var(--color-bg-secondary); color: var(--color-text); border: 1px solid var(--color-border-hover); border-radius: 5px; }
+.club-color-field input[aria-invalid="true"] { border-color: var(--color-danger); }
+.club-palette-options { margin-top: 14px; }
+.club-palette-options button { display: inline-flex; align-items: center; gap: 5px; font-size: .75rem; padding: 6px 8px; }
+.club-palette-options button span { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--color-border-hover); }
+.club-identity-preview { display: flex; align-items: center; gap: 18px; padding: 18px; }
+.club-identity-preview > div { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.club-identity-preview strong { font-size: 1.15rem; overflow-wrap: anywhere; }
+.club-identity-preview small, .club-identity-preview > div > span { color: var(--color-text-muted); font-size: .8rem; }
+.club-identity-error { margin: 0; color: #fca5a5; }
+.club-identity-actions button[type="submit"] { background: var(--color-primary-strong); color: white; border-color: var(--color-primary); }
+@media (max-width: 640px) {
+  .club-identity-editor { grid-template-columns: 1fr; padding: 12px; gap: 14px; }
+  .club-profile-hero { padding: 14px; gap: 12px; align-items: flex-start; }
+  .club-profile-hero > .club-badge--lg { width: 46px; height: 52px; font-size: 16px; }
+  .club-identity-preview { padding: 12px; gap: 12px; }
+  .club-identity-actions button { flex: 1 1 auto; }
+  .person-identity-hero { padding: 18px !important; }
+}

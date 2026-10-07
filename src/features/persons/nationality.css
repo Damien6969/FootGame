@@ -1,0 +1,15 @@
+.nationality-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: var(--color-surface-muted);
+  font-size: .72rem;
+  vertical-align: middle;
+  color: var(--color-text);
+}
+.nationality-badge__country { display: inline-flex; align-items: center; gap: 4px; }
+.nationality-badge img { display: block; border-radius: 2px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .18); object-fit: cover; flex-shrink: 0; }
+.nationality-badge--compact { background: transparent; padding: 1px 0; gap: 4px; margin-inline-start: 6px; }

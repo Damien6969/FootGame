@@ -1,0 +1,360 @@
+/* Player Favorites & Tracking View */
+.player-directory-name,
+.player-tracking-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.player-favorite-button {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  min-width: 1.4rem;
+  min-height: 1.4rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.player-favorite-button.is-active {
+  color: var(--color-gold-light, #fbbf24);
+}
+
+.player-tracking {
+  min-width: 0;
+}
+
+.player-tracking-intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  padding: 0 2px;
+}
+
+.player-tracking-intro a,
+.player-tracking-directory {
+  color: var(--color-link);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.player-tracking-intro a:hover,
+.player-tracking-directory:hover {
+  text-decoration: underline;
+}
+
+/* Table container */
+.player-tracking-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  table-layout: fixed;
+  border: none;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.player-tracking-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.player-fav-tbody {
+  display: table-row-group;
+}
+
+.player-fav-row {
+  background: transparent;
+  border: none;
+}
+
+.player-fav-td {
+  padding: 0;
+  border: none;
+  vertical-align: top;
+}
+
+/* Card-like compact display (2-3 lines) mirroring club favorite-card */
+.player-fav-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0.55rem 0.7rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid #38bdf8;
+  border-radius: var(--radius-md, 8px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.player-fav-card:hover {
+  background: var(--color-surface-elevated, rgba(30, 41, 59, 0.6));
+  border-color: var(--color-border-hover);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.player-fav-card.is-alive {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.65) 0%, rgba(15, 23, 42, 0.85) 100%);
+}
+
+.player-fav-card.is-inactive {
+  opacity: 0.72;
+  background: rgba(15, 23, 42, 0.5);
+  border-left-color: rgba(148, 163, 184, 0.35) !important;
+}
+
+/* Ligne 1 : Header (Poste, Nom, Club, Statut, Étoile) */
+.player-fav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-width: 0;
+}
+
+.player-fav-identity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.player-fav-identity .person-link {
+  font-weight: 750 !important;
+  font-size: 0.86rem;
+  color: #ffffff !important;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-fav-identity .person-link__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-fav-club-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-fav-sep {
+  color: var(--color-text-dim, #64748b);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.player-fav-club {
+  color: var(--color-link);
+  font-size: 0.8rem;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 550;
+}
+
+.player-fav-club:hover {
+  text-decoration: underline;
+  color: var(--color-focus);
+}
+
+.player-fav-loan-tag {
+  font-size: 0.68rem;
+  font-weight: 750;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.player-fav-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.player-fav-status-badge {
+  font-size: 0.7rem;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Ligne 2 : Stats de la saison */
+.player-fav-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  min-width: 0;
+}
+
+.player-fav-stats-wrap {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.player-fav-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--color-text-dim);
+  font-size: 0.73rem;
+  white-space: nowrap;
+}
+
+.player-fav-stat-pill strong {
+  color: var(--color-text, #f1f5f9);
+  font-weight: 650;
+}
+
+.player-fav-pill-icon {
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.player-fav-loan-origin {
+  font-size: 0.72rem;
+  color: var(--color-text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Ligne 3 : Match du tour */
+.player-fav-match-block {
+  min-width: 0;
+  font-size: 0.75rem;
+}
+
+.player-fav-match-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  padding: 3px 6px;
+  min-width: 0;
+}
+
+.player-fav-opp-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.player-fav-tour-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--color-text-dim);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.player-fav-opp-name {
+  color: var(--color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.74rem;
+}
+
+.player-fav-match-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.player-fav-match-link {
+  color: var(--color-link);
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.player-fav-match-link:hover {
+  text-decoration: underline;
+  color: var(--color-focus);
+}
+
+.player-fav-bench-badge {
+  font-size: 0.7rem;
+  color: var(--color-text-dim);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+.player-fav-idle-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 2px 6px;
+  min-width: 0;
+}
+
+.player-fav-idle-msg {
+  font-style: italic;
+  font-size: 0.73rem;
+  color: var(--color-text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,21 @@
+/** Réglages des entraîneurs : toutes les notes sont sur 30. */
+export const COACH_BALANCE = {
+  peakPlayerWeight: .80,
+  bonusWeight: .10,
+  coachBaseBonus: 0.25,
+  coachUpsideWeight: 0.15,
+  coachDeficitTolerance: 3,
+  coachDeficitWeight: 0.08,
+  startRatio: .80,
+  declineFloor: .70,
+  yearsToPeak: 12,
+  earliestPeakAge: 45,
+  latestPeakAge: 55,
+  retirementAge: 65,
+  destinationWeights: { lastClub: .70, formerClub: .20, other: .10 },
+  newCoachMaxClubGap: 5,
+  originClubWeight: 2,
+  competitionRatings: { DEPARTMENT: 8, REGION: 16, CONFERENCE: 24, NATIONAL: 30 },
+  targetDismissalsPerSeason: 5,
+  dismissalTenureThreshold: 3,
+} as const

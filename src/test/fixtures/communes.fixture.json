@@ -1,0 +1,9 @@
+{
+  "version": "insee-2023-cog-2025",
+  "sourceLabel": "Insee — populations de référence 2023",
+  "sourceUrl": "https://www.insee.fr/fr/statistiques/8680726",
+  "communes": [
+    { "id": "01004", "name": "Ambérieu-en-Bugey", "population": 15934, "departmentId": "01", "regionId": "84", "zoneId": "SUD_EST" },
+    { "id": "01005", "name": "Ambérieux-en-Dombes", "population": 1906, "departmentId": "01", "regionId": "84", "zoneId": "SUD_EST" }
+  ]
+}

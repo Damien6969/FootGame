@@ -1,0 +1,10 @@
+.coach-badge { display: inline-flex; align-items: center; flex-wrap: wrap; gap: .5rem; font-size: .85rem; }
+.coach-badge a { font-weight: 600; }
+.coach-rating { color: #c4b5fd; font-weight: 800; white-space: nowrap; }
+.coach-rating small { margin-left: .15rem; font-weight: 400; opacity: .7; }
+.coach-bonus { color: #4ade80; white-space: nowrap; }
+.coach-empty { font-size: .8rem; color: var(--color-text-muted, #94a3b8); }
+.coach-panel { padding: 1rem; margin: 1rem 0; border: 1px solid var(--color-border, #334155); border-radius: .75rem; background: rgba(139, 92, 246, .07); }
+.coach-panel h2 { font-size: 1rem; margin: 0 0 .6rem; }
+.coach-panel p { margin: .5rem 0 0; font-size: .85rem; color: var(--color-text-muted, #94a3b8); }
+.coach-history-inline { display: block; margin-top: .3rem; font-weight: 400; }
